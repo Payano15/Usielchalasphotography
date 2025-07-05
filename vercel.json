@@ -2,30 +2,8 @@
   "version": 2,
   "builds": [
     {
-      "src": "*.html",
+      "src": "index.html",
       "use": "@vercel/static"
-    },
-    {
-      "src": "*.css",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "*.jpg",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "*.png",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/",
-      "dest": "/index.html"
-    },
-    {
-      "src": "/(.*\\.(jpg|jpeg|png|gif|css|js))",
-      "dest": "/$1"
     }
   ]
 } 
