@@ -1,0 +1,320 @@
+/* ===== RESET Y ESTILOS BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* ===== NAVBAR MEJORADO ===== */
+.navbar {
+    background: linear-gradient(90deg, #232526 0%, #414345 100%) !important;
+    border-bottom: 2px solid #007bff;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    color: #333 !important;
+    text-decoration: none;
+}
+
+.navbar-logo {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #007bff;
+    box-shadow: 0 2px 8px rgba(0,123,255,0.15);
+}
+
+.brand-text {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.navbar-nav .nav-link {
+    color: #fff !important;
+    font-weight: 600;
+    margin: 0 14px;
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: #ffd700 !important;
+}
+
+/* ===== HERO MEJORADO ===== */
+.hero-section {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #232526 0%, #667eea 100%);
+    color: white;
+    padding-top: 100px;
+}
+
+.hero-title {
+    font-size: 3.2rem;
+    font-weight: 800;
+    margin-bottom: 1.2rem;
+    line-height: 1.1;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+
+.highlight {
+    color: #ffd700;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1.2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 14px 36px;
+    border-radius: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+    border: none;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #007bff, #00c6ff);
+    color: white;
+    box-shadow: 0 4px 15px rgba(0,123,255,0.25);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(45deg, #0056b3, #007bff);
+    color: #ffd700;
+    transform: translateY(-2px) scale(1.04);
+}
+
+.btn-outline-light {
+    border: 2px solid #fff;
+    color: #fff;
+    background: transparent;
+}
+
+.btn-outline-light:hover {
+    background: #fff;
+    color: #232526;
+    transform: translateY(-2px);
+}
+
+/* ===== SECCIONES GENERALES ===== */
+.section-title {
+    font-size: 2.6rem;
+    font-weight: 800;
+    margin-bottom: 3rem;
+    color: #232526;
+}
+
+.category-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #232526;
+    margin-bottom: 1.2rem;
+    text-align: left;
+    margin-left: 0.5rem;
+}
+
+/* ===== GALERÍA EN GRID ===== */
+.gallery-section {
+    padding: 80px 0 40px 0;
+    background: #f8f9fa;
+}
+
+.category-section {
+    margin-bottom: 3.5rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.gallery-img {
+    width: 100%;
+    max-width: 500px;
+    height: 340px;
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.13);
+    margin: 0 auto;
+    display: block;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery-img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 16px 48px rgba(0,123,255,0.18);
+}
+
+/* ===== SOBRE MÍ MEJORADO ===== */
+.about-section {
+    padding: 80px 0 60px 0;
+    background: #fff;
+}
+
+.about-img {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #007bff;
+    box-shadow: 0 8px 25px rgba(0,123,255,0.18);
+    margin-bottom: 1.2rem;
+}
+
+.about-text {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #444;
+    padding-left: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .about-img {
+        margin-bottom: 1.5rem;
+        width: 120px;
+        height: 120px;
+    }
+    .about-text {
+        padding-left: 0;
+        font-size: 1rem;
+    }
+}
+
+/* ===== REDES SOCIALES MEJORADAS ===== */
+.social-section {
+    padding: 70px 0 50px 0;
+    background: linear-gradient(135deg, #232526 0%, #667eea 100%);
+    color: white;
+}
+
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.social-card {
+    background: rgba(255,255,255,0.10);
+    border-radius: 18px;
+    padding: 2.2rem 1.2rem;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s;
+    border: 1.5px solid rgba(255,255,255,0.18);
+    box-shadow: 0 4px 18px rgba(0,0,0,0.10);
+}
+
+.social-card:hover {
+    background: rgba(255,255,255,0.18);
+    color: #ffd700;
+    transform: translateY(-6px) scale(1.04);
+    box-shadow: 0 8px 32px rgba(0,123,255,0.18);
+}
+
+.social-icon {
+    width: 70px;
+    height: 70px;
+    background: rgba(255,255,255,0.18);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.2rem auto;
+    font-size: 2.2rem;
+    transition: all 0.3s;
+}
+
+.social-card:hover .social-icon {
+    background: #fff;
+    color: #232526;
+    transform: scale(1.13);
+}
+
+.social-card h5 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+}
+
+.social-card p {
+    font-size: 0.95rem;
+    opacity: 0.85;
+    margin: 0;
+}
+
+/* ===== FOOTER MEJORADO ===== */
+.footer {
+    background: #232526;
+    color: #fff;
+    padding: 2.5rem 0 1.5rem 0;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.footer-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #007bff;
+    margin-bottom: 0.5rem;
+}
+
+.footer-content p {
+    margin: 0;
+    font-size: 1rem;
+    color: #fff;
+    opacity: 0.85;
+}
+
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+    .gallery-img {
+        height: 220px;
+    }
+    .footer-logo {
+        width: 44px;
+        height: 44px;
+    }
+} 
