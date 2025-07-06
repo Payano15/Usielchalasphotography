@@ -516,6 +516,7 @@ body {
     }
 } 
 .hero-bg-image {
+    background-image: url('./images/Bienvenido1.jpg');
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
