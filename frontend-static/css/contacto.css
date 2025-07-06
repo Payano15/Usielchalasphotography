@@ -1,0 +1,16 @@
+body { font-family: 'Poppins', sans-serif; background: #fff; }
+.contact-section { min-height: 100vh; display: flex; align-items: center; }
+.contact-form input, .contact-form textarea { border-radius: 1rem; }
+.contact-form button { border-radius: 2rem; padding-left: 2rem; padding-right: 2rem; }
+.contact-form { border-radius: 1.5rem; }
+.footer-dark { background: #232323; color: #fff; }
+.footer-dark a { color: #fff; }
+.footer-dark .form-control { border-radius: 1rem; }
+.footer-dark .btn { border-radius: 2rem; }
+.footer-dark .input-group { max-width: 350px; }
+.footer-dark h5 { font-size: 1.2rem; }
+.footer-dark small { color: #ccc; }
+.ratio { border-radius: 1rem; overflow: hidden; }
+@media (max-width: 991px) {
+  .contact-section { min-height: unset; }
+} 

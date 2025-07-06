@@ -261,3 +261,65 @@ function setupLazyLoading() {
 
 // Inicializar lazy loading
 document.addEventListener('DOMContentLoaded', setupLazyLoading); 
+
+// Script para scroll y resaltar tarjeta con dropdown
+const items = document.querySelectorAll('.proyecto-item');
+items.forEach(item => {
+    item.addEventListener('click', function(e) {
+        e.preventDefault();
+        const value = this.getAttribute('data-proyecto');
+        // Hacer scroll a la sección de proyectos
+        const section = document.getElementById('proyectos');
+        if(section) section.scrollIntoView({ behavior: 'smooth' });
+        // Resaltar la tarjeta correspondiente
+        setTimeout(() => {
+            document.querySelectorAll('#proyectos .card').forEach(card => {
+                card.classList.remove('border-primary');
+            });
+            let cardTitle = Array.from(document.querySelectorAll('#proyectos .card-title'));
+            let card = cardTitle.find(el => el.textContent.trim().toLowerCase() === value.toLowerCase());
+            if(card) {
+                card.closest('.card').classList.add('border-primary');
+            }
+        }, 500);
+    });
+});
+// Forzar despliegue del dropdown por hover con JS
+const proyectosDropdown = document.querySelectorAll('.proyectos-hover');
+proyectosDropdown.forEach(function(item) {
+    item.addEventListener('mouseenter', function() {
+        this.querySelector('.dropdown-menu').classList.add('show');
+    });
+    item.addEventListener('mouseleave', function() {
+        this.querySelector('.dropdown-menu').classList.remove('show');
+    });
+});
+// Scroll suave para enlaces internos
+const navLinks = document.querySelectorAll('a[href^="#"]');
+navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    });
+});
+// Resaltar sección activa en el navbar
+window.addEventListener('scroll', function() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    let current = '';
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (pageYOffset >= sectionTop - 200) {
+            current = section.getAttribute('id');
+        }
+    });
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+        }
+    });
+}); 
