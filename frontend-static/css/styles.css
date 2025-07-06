@@ -137,6 +137,9 @@ body {
     background: linear-gradient(135deg, #232526 0%, #667eea 100%);
     color: white;
     padding-top: 100px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
 }
 
 .hero-title {
@@ -516,7 +519,7 @@ body {
     }
 } 
 .hero-bg-image {
-    background-image: url('./images/Bienvenido1.jpg');
+    background-image: url('../images/Bienvenido1.jpg');
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -527,6 +530,7 @@ body {
     left: 0;
     z-index: 0;
     opacity: 0.55;
+    min-height: 400px;
     transition: background-position 0.3s, background-size 0.3s;
 }
 @media (max-width: 768px) {
