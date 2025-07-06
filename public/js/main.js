@@ -323,3 +323,19 @@ window.addEventListener('scroll', function() {
         }
     });
 }); 
+
+// Cerrar el menú desplegable de Proyectos al hacer clic en cualquier opción
+const proyectosDropdownMenu = document.querySelectorAll('.proyectos-dropdown-menu .dropdown-item');
+proyectosDropdownMenu.forEach(item => {
+    item.addEventListener('click', function(e) {
+        // Cierra el menú
+        const dropdown = this.closest('.dropdown-menu');
+        if (dropdown) dropdown.classList.remove('show');
+        // Si el enlace es interno (#), previene el comportamiento por defecto
+        const href = this.getAttribute('href');
+        if (href && href.startsWith('#')) {
+            e.preventDefault();
+        }
+        // Si el enlace es a otra página, deja que navegue normalmente
+    });
+}); 
