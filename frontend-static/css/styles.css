@@ -487,3 +487,18 @@ body {
         font-size: 1.3rem !important;
     }
 } 
+@media (max-width: 991px) {
+    .navbar-toggler {
+        display: block !important;
+        border: none;
+        background: transparent;
+        box-shadow: none;
+        margin-left: auto;
+    }
+    .navbar-collapse {
+        background: #232526;
+        padding: 1rem 0.5rem;
+        border-radius: 1rem;
+        box-shadow: 0 4px 18px rgba(0,0,0,0.10);
+    }
+} 
