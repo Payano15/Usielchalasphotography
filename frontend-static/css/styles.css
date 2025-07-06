@@ -393,3 +393,97 @@ body {
         height: 44px;
     }
 } 
+@media (max-width: 576px) {
+    .navbar {
+        padding: 0.3rem 0.5rem !important;
+    }
+    .navbar-logo {
+        width: 36px;
+        height: 36px;
+        border-width: 2px;
+    }
+    .navbar-brand span, .brand-text {
+        font-size: 1.1rem;
+    }
+    .navbar-nav .nav-link {
+        font-size: 0.98rem;
+        margin: 0 6px;
+        padding: 0.4rem 0.7rem !important;
+    }
+    .proyectos-dropdown-menu {
+        min-width: 120px;
+        padding: 0.3rem 0;
+    }
+    .proyectos-dropdown-menu .dropdown-item {
+        font-size: 1rem;
+        padding: 0.7rem 1rem;
+    }
+    .hero-section {
+        padding-top: 60px;
+        min-height: 60vh;
+    }
+    .hero-title {
+        font-size: 2rem;
+    }
+    .section-title {
+        font-size: 1.5rem;
+    }
+    .gallery-img {
+        height: 140px;
+        max-width: 100%;
+    }
+    .about-img {
+        width: 80px;
+        height: 80px;
+    }
+    .about-text {
+        font-size: 0.95rem;
+        padding-left: 0;
+    }
+    .footer-logo {
+        width: 32px;
+        height: 32px;
+        margin-bottom: 0.2rem;
+    }
+    .footer-content p, .footer .small {
+        font-size: 0.85rem;
+    }
+    .row.g-4 > [class^='col-'], .row.g-4 > [class*=' col-'] {
+        margin-bottom: 1.2rem;
+    }
+    #contacto .row > div {
+        margin-bottom: 1.2rem;
+    }
+    #contacto .bi {
+        font-size: 2rem !important;
+    }
+    #contacto .btn {
+        padding: 8px 18px;
+        font-size: 0.95rem;
+    }
+    #contacto .fw-semibold {
+        font-size: 0.98rem;
+    }
+}
+@media (max-width: 400px) {
+    .navbar-logo {
+        width: 28px;
+        height: 28px;
+    }
+    .footer-logo {
+        width: 24px;
+        height: 24px;
+    }
+    .hero-title {
+        font-size: 1.3rem;
+    }
+    .section-title {
+        font-size: 1.1rem;
+    }
+    .gallery-img {
+        height: 90px;
+    }
+    #contacto .bi {
+        font-size: 1.3rem !important;
+    }
+} 
