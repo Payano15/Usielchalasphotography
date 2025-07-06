@@ -494,11 +494,24 @@ body {
         background: transparent;
         box-shadow: none;
         margin-left: auto;
+        align-self: center;
+        height: 44px;
+        width: 44px;
+        padding: 0.4rem;
+    }
+    .navbar-toggler-icon {
+        width: 2.2em;
+        height: 2.2em;
+        background-size: 2.2em 2.2em;
     }
     .navbar-collapse {
         background: #232526;
         padding: 1rem 0.5rem;
         border-radius: 1rem;
         box-shadow: 0 4px 18px rgba(0,0,0,0.10);
+    }
+    .navbar .container {
+        display: flex;
+        align-items: center;
     }
 } 
