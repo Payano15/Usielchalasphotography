@@ -7,6 +7,14 @@ document.addEventListener('DOMContentLoaded', function() {
     loadPhotos();
     setupEventListeners();
     setupScrollToTop();
+    // Animación fade-in para el título del Hero
+    const heroTitle = document.querySelector('.hero-section .display-4');
+    if (heroTitle) {
+        heroTitle.style.opacity = '0';
+        setTimeout(() => {
+            heroTitle.style.opacity = '';
+        }, 100);
+    }
 });
 
 // Cargar fotos desde la API
@@ -120,23 +128,21 @@ function setupEventListeners() {
         });
     });
     
-    // Navbar activo en scroll
+    // Navbar activo en scroll (solo activa el enlace de la sección visible)
     window.addEventListener('scroll', function() {
         const sections = document.querySelectorAll('section[id]');
         const navLinks = document.querySelectorAll('.nav-link');
-        
         let current = '';
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            if (pageYOffset >= sectionTop - 200) {
+            const sectionHeight = section.offsetHeight;
+            if (window.scrollY >= sectionTop - 80 && window.scrollY < sectionTop + sectionHeight - 80) {
                 current = section.getAttribute('id');
             }
         });
-        
         navLinks.forEach(link => {
             link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
+            if (current && link.getAttribute('href') === `#${current}`) {
                 link.classList.add('active');
             }
         });
@@ -262,6 +268,22 @@ function setupLazyLoading() {
 // Inicializar lazy loading
 document.addEventListener('DOMContentLoaded', setupLazyLoading); 
 
+// Animación de entrada para secciones (fade-in)
+function animateSectionsOnScroll() {
+    const sections = document.querySelectorAll('section[id]');
+    const trigger = window.innerHeight * 0.85;
+    sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < trigger) {
+            section.classList.add('visible');
+        } else {
+            section.classList.remove('visible');
+        }
+    });
+}
+window.addEventListener('scroll', animateSectionsOnScroll);
+window.addEventListener('DOMContentLoaded', animateSectionsOnScroll);
+
 // Script para scroll y resaltar tarjeta con dropdown
 const items = document.querySelectorAll('.proyecto-item');
 items.forEach(item => {
@@ -320,6 +342,30 @@ window.addEventListener('scroll', function() {
         link.classList.remove('active');
         if (link.getAttribute('href') === `#${current}`) {
             link.classList.add('active');
+        }
+    });
+}); 
+
+// Navbar: sombra y cambio de color al hacer scroll
+window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 20) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+
+// Scroll suave entre secciones
+const links = document.querySelectorAll('a.nav-link[href^="#"], a.btn[href^="#"]');
+links.forEach(link => {
+    link.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if (targetId.length > 1 && document.querySelector(targetId)) {
+            e.preventDefault();
+            document.querySelector(targetId).scrollIntoView({
+                behavior: 'smooth'
+            });
         }
     });
 }); 

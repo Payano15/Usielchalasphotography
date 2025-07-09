@@ -26,7 +26,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto gap-3">
-                    <li class="nav-item"><a class="nav-link active" href="#inicio">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
                     <li class="nav-item dropdown proyectos-hover">
                         <a class="nav-link fw-semibold" href="#" id="proyectosDropdown" role="button" aria-expanded="false" style="padding-top: 0.6rem; padding-bottom: 0.6rem;">
                             Proyectos
@@ -61,17 +61,20 @@
         <div class="container">
             <h2 class="text-center fw-bold mb-5">Proyectos Fotográficos</h2>
             <div class="gallery-grid">
-                <div class="image-container project-image">
+                <div class="image-container project-image" data-project="Gala">
                     <div class="image-skeleton"></div>
                     <img src="./images/Gala1.jpg" alt="Gala" loading="lazy">
+                    <div class="project-overlay"><span>Gala</span></div>
                 </div>
-                <div class="image-container project-image">
+                <div class="image-container project-image" data-project="Graduación">
                     <div class="image-skeleton"></div>
                     <img src="./images/Graduacion1.jpg" alt="Graduación" loading="lazy">
+                    <div class="project-overlay"><span>Graduación</span></div>
                 </div>
-                <div class="image-container project-image">
+                <div class="image-container project-image" data-project="Quince años">
                     <div class="image-skeleton"></div>
                     <img src="./images/quince1.jpg" alt="Quince años" loading="lazy">
+                    <div class="project-overlay"><span>Quince años</span></div>
                 </div>
             </div>
         </div>
@@ -92,9 +95,17 @@
                     <p class="fs-5 mb-2">
                         Soy Usiel Chalas, fotógrafo apasionado por capturar la esencia de cada momento. Mi enfoque es crear imágenes que transmitan emociones y cuenten historias reales. Con experiencia en eventos, retratos y fotografía artística, busco siempre la luz y el instante perfecto.
                     </p>
-                    <p class="text-muted small mb-0">
+                    <p class="text-muted small mb-3">
                         Mi objetivo es que cada foto hable por sí sola y que cada cliente se lleve un recuerdo inolvidable. ¡Bienvenido a mi mundo visual!
                     </p>
+                    <!-- Habilidades -->
+                    <div class="d-flex gap-4 align-items-center mb-3 flex-wrap">
+                        <span title="Edición profesional"><i class="bi bi-brush" style="font-size:2rem;"></i></span>
+                        <span title="Cámara profesional"><i class="bi bi-camera" style="font-size:2rem;"></i></span>
+                        <span title="Creatividad"><i class="bi bi-lightbulb" style="font-size:2rem;"></i></span>
+                        <span title="Trabajo en equipo"><i class="bi bi-people" style="font-size:2rem;"></i></span>
+                        <span title="Comunicación"><i class="bi bi-chat-dots" style="font-size:2rem;"></i></span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -151,5 +162,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/image-loader.js"></script>
+    <script src="js/lightbox.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html> 

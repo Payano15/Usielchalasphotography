@@ -15,15 +15,20 @@ body {
 /* ===== SISTEMA DE CARGA DE IMÁGENES ELEGANTE ===== */
 /* Los estilos del sistema de carga de imágenes se han movido a image-loader.css */
 
-/* ===== NAVBAR MEJORADO ===== */
+/* Navbar sombra y transición de color al hacer scroll */
 .navbar {
-    background: linear-gradient(90deg, #232526 0%, #414345 100%) !important;
-    border-bottom: 2px solid #007bff;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    background-color: #fff !important;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: none;
+}
+
+.navbar.scrolled {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    background-color: #f8f9fa !important;
 }
 
 .navbar-brand, .navbar-brand span, .navbar .fw-bold {
-    color: #fff !important;
+    color: #232526 !important;
 }
 
 .navbar-logo {
@@ -42,17 +47,22 @@ body {
     letter-spacing: 1px;
 }
 
+/* Corregir color fijo en el navbar */
 .navbar-nav .nav-link {
-    color: #fff !important;
+    color: #232526 !important;
     font-weight: 600;
     margin: 0 14px;
     font-size: 1.05rem;
     letter-spacing: 0.5px;
+    transition: color 0.2s;
+    background: none !important;
 }
 
-.navbar-nav .nav-link:hover,
-.navbar-nav .nav-link.active {
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:focus,
+.navbar-nav .nav-link:hover {
     color: #ffd700 !important;
+    background: none !important;
 }
 
 /* Dropdown de Proyectos mejorado */
@@ -62,8 +72,8 @@ body {
 }
 /* Botón Proyectos estilo navbar oscuro (restaurado) */
 .proyectos-hover > .nav-link {
+  color: #232526 !important;
   background: transparent;
-  color: #fff !important;
   border-radius: 1.5rem;
   border: none;
   font-weight: 600;
@@ -74,8 +84,8 @@ body {
   z-index: 2;
 }
 .proyectos-hover > .nav-link:hover, .proyectos-hover > .nav-link:focus {
-  background: rgba(255,255,255,0.10);
   color: #ffd700 !important;
+  background: rgba(0,0,0,0.03);
   border: none;
 }
 .proyectos-dropdown-menu {
@@ -280,6 +290,26 @@ body {
     padding-left: 1.5rem;
 }
 
+/* Iconos de habilidades en Sobre mí */
+.sobre-mi-habilidades i {
+    color: #007bff;
+    transition: color 0.2s, transform 0.2s;
+}
+.sobre-mi-habilidades i:hover {
+    color: #ffd700;
+    transform: scale(1.15) rotate(-8deg);
+}
+
+/* Botón de descarga de CV */
+.sobre-mi-cv-btn {
+    margin-top: 0.5rem;
+    font-size: 1.08rem;
+    padding: 0.6rem 1.6rem;
+    border-radius: 2rem;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0,123,255,0.08);
+}
+
 @media (max-width: 768px) {
     .about-img {
         margin-bottom: 1.5rem;
@@ -457,19 +487,7 @@ body {
     .row.g-4 > [class^='col-'], .row.g-4 > [class*=' col-'] {
         margin-bottom: 1.2rem;
     }
-    #contacto .row > div {
-        margin-bottom: 1.2rem;
-    }
-    #contacto .bi {
-        font-size: 2rem !important;
-    }
-    #contacto .btn {
-        padding: 8px 18px;
-        font-size: 0.95rem;
-    }
-    #contacto .fw-semibold {
-        font-size: 0.98rem;
-    }
+
 }
 @media (max-width: 400px) {
     .navbar-logo {
@@ -489,9 +507,7 @@ body {
     .gallery-img {
         height: 90px;
     }
-    #contacto .bi {
-        font-size: 1.3rem !important;
-    }
+
 } 
 @media (max-width: 991px) {
     .navbar-toggler {
@@ -521,28 +537,29 @@ body {
         align-items: center;
     }
 } 
+/* Animación fade-in para el título del Hero */
+.hero-section .display-4 {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: heroFadeIn 1.2s ease-out 0.2s forwards;
+}
+@keyframes heroFadeIn {
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* Fondo del Hero con degradado sutil y ruta corregida */
 .hero-bg-image {
-    background-image: url('../images/Bienvenido1.jpg');
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
+    background: linear-gradient(120deg, rgba(35,37,38,0.25) 0%, rgba(102,126,234,0.12) 100%), url('../images/Bienvenido1.jpg') center/cover no-repeat;
+    filter: brightness(0.95) blur(0.3px);
     z-index: 0;
-    opacity: 1;
-    min-height: 100%;
-    min-width: 100%;
 }
 .hero-bg-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(30,30,40,0.45);
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(120deg, rgba(35,37,38,0.7) 0%, rgba(102,126,234,0.5) 100%);
     z-index: 1;
 }
 .hero-section > .container {
@@ -569,3 +586,313 @@ body {
         min-height: 220px;
     }
 } 
+
+/* Microinteracciones: animaciones de hover y entrada */
+
+/* Botones: animación de escala y sombra al hacer hover */
+.btn, .btn-primary, .btn-outline-primary, .btn-dark, .btn-outline-dark {
+    transition: transform 0.18s cubic-bezier(.4,1.5,.5,1), box-shadow 0.18s, background 0.18s, color 0.18s;
+}
+.btn:hover, .btn:focus, .btn-primary:hover, .btn-outline-primary:hover, .btn-dark:hover, .btn-outline-dark:hover {
+    transform: scale(1.06) translateY(-2px);
+    box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+    z-index: 2;
+}
+
+/* Enlaces del navbar: subrayado animado y leve escala */
+.navbar-nav .nav-link {
+    position: relative;
+    overflow: hidden;
+}
+.navbar-nav .nav-link::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0; bottom: 0;
+    width: 100%; height: 2px;
+    background: #ffd700;
+    transform: scaleX(0);
+    transition: transform 0.25s cubic-bezier(.4,1.5,.5,1);
+}
+.navbar-nav .nav-link:hover::after, .navbar-nav .nav-link.active::after {
+    transform: scaleX(1);
+}
+.navbar-nav .nav-link:hover, .navbar-nav .nav-link.active {
+    transform: scale(1.08);
+}
+
+/* Secciones principales: fade-in al entrar en pantalla */
+section[id] {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s cubic-bezier(.4,1.5,.5,1), transform 0.7s cubic-bezier(.4,1.5,.5,1);
+}
+section.visible {
+    opacity: 1;
+    transform: none;
+} 
+
+/* === ESTILOS LIMPIOS PARA LA SECCIÓN CONTACTO === */ 
+
+/* === Sección Conecta conmigo === */
+section#contacto {
+  background: #f8f9fa !important;
+  color: #222 !important;
+  padding: 3rem 0 !important;
+  margin-bottom: 0 !important;
+}
+
+section#contacto h2 {
+  color: #222 !important;
+  font-weight: 700 !important;
+  letter-spacing: 1px !important;
+  margin-bottom: 2.5rem !important;
+}
+
+section#contacto .row.g-4 {
+  margin-bottom: 2rem !important;
+}
+
+section#contacto a.text-dark {
+  transition: color 0.2s, transform 0.2s !important;
+  text-decoration: none !important;
+}
+
+section#contacto a.text-dark:hover,
+section#contacto a.text-dark:focus {
+  color: #007bff !important;
+  text-decoration: none !important;
+  transform: translateY(-4px) scale(1.08) !important;
+}
+
+section#contacto i.bi {
+  display: block !important;
+  margin-bottom: 0.5rem !important;
+  color: #222 !important;
+  transition: color 0.2s, transform 0.2s !important;
+}
+
+section#contacto a.text-dark:hover i.bi,
+section#contacto a.text-dark:focus i.bi {
+  color: #007bff !important;
+  transform: scale(1.15) !important;
+}
+
+section#contacto .btn-outline-dark {
+  border-width: 2px !important;
+  font-weight: 500 !important;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s !important;
+}
+
+section#contacto .btn-outline-dark:hover,
+section#contacto .btn-outline-dark:focus {
+  background: #222 !important;
+  color: #fff !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08) !important;
+}
+
+section#contacto .direccion-link {
+  color: #222 !important;
+  font-size: 1.1rem !important;
+  transition: color 0.2s !important;
+}
+
+section#contacto .direccion-link:hover,
+section#contacto .direccion-link:focus {
+  color: #007bff !important;
+  text-decoration: underline !important;
+}
+
+@media (max-width: 767px) {
+  section#contacto .row.g-4 > div {
+    margin-bottom: 1.5rem !important;
+  }
+  section#contacto .btn-outline-dark {
+    width: 100% !important;
+  }
+}
+
+/* === FORZAR VISIBILIDAD EN TODAS LAS PÁGINAS === */
+section#contacto {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  background: #f8f9fa !important;
+  color: #222 !important;
+  padding: 3rem 0 !important;
+}
+
+section#contacto * {
+  color: #222 !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+section#contacto h2 {
+  color: #222 !important;
+  font-weight: 700 !important;
+  letter-spacing: 1px !important;
+  margin-bottom: 2.5rem !important;
+  text-align: center !important;
+}
+
+section#contacto .row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  margin-bottom: 2rem !important;
+}
+
+section#contacto .col-6 {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+section#contacto a {
+  text-decoration: none !important;
+  transition: color 0.2s, transform 0.2s !important;
+}
+
+section#contacto a:hover {
+  color: #007bff !important;
+  transform: translateY(-4px) scale(1.08) !important;
+}
+
+section#contacto i.bi {
+  display: block !important;
+  margin-bottom: 0.5rem !important;
+  color: #222 !important;
+  font-size: 2.5rem !important;
+  transition: color 0.2s, transform 0.2s !important;
+}
+
+section#contacto a:hover i.bi {
+  color: #007bff !important;
+  transform: scale(1.15) !important;
+}
+
+section#contacto .btn-outline-dark {
+  border-width: 2px !important;
+  font-weight: 500 !important;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s !important;
+}
+
+section#contacto .btn-outline-dark:hover {
+  background: #222 !important;
+  color: #fff !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08) !important;
+}
+
+section#contacto .direccion-link {
+  color: #222 !important;
+  font-size: 1.1rem !important;
+  transition: color 0.2s !important;
+}
+
+section#contacto .direccion-link:hover {
+  color: #007bff !important;
+  text-decoration: underline !important;
+} 
+
+/* === Sección de Contacto === */
+.contact-section {
+  margin-top: 1.5rem !important;
+}
+
+/* === Estética mejorada para el formulario de contacto === */
+.contact-section {
+  background: linear-gradient(120deg, #f8fafc 60%, #e9ecef 100%);
+  padding-top: 3.5rem !important;
+  padding-bottom: 3.5rem !important;
+}
+.contact-section .contact-card {
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 6px 32px rgba(0,0,0,0.08);
+  padding: 2.5rem 2rem 2rem 2rem;
+  max-width: 480px;
+  margin: 0 auto;
+  position: relative;
+}
+.contact-section h3 {
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+.contact-section .contact-subtitle {
+  text-align: center;
+  color: #6c757d;
+  font-size: 1.08rem;
+  margin-bottom: 1.2rem;
+}
+.contact-section .contact-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.2rem;
+  color: #007bff;
+  margin-bottom: 0.5rem;
+}
+.contact-section .contact-email {
+  display: block;
+  text-align: center;
+  font-weight: 600;
+  color: #232526;
+  margin-bottom: 1.2rem;
+  font-size: 1.08rem;
+  letter-spacing: 0.2px;
+}
+.contact-section form {
+  width: 100%;
+  margin: 0 auto;
+}
+.contact-section .form-control {
+  width: 100%;
+  border-radius: 1.1rem;
+  font-size: 1rem;
+  padding: 0.8rem 1.1rem;
+  box-shadow: none;
+  border: 1.5px solid #d1d5db;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background: #f8fafc;
+}
+.contact-section .form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0,123,255,0.10);
+  background: #fff;
+}
+.contact-section label.form-label {
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+  color: #232526;
+}
+.contact-section button[type="submit"] {
+  border-radius: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-top: 0.5rem;
+  background: #232526;
+  color: #fff;
+  border: none;
+  padding: 0.7rem 2.5rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  transition: background 0.18s, color 0.18s, transform 0.18s;
+}
+.contact-section button[type="submit"]:hover,
+.contact-section button[type="submit"]:focus {
+  background: #007bff;
+  color: #fff;
+  transform: scale(1.04) translateY(-2px);
+}
+@media (max-width: 600px) {
+  .contact-section .contact-card {
+    padding: 1.2rem 0.5rem 1.5rem 0.5rem;
+  }
+  .contact-section {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+}
