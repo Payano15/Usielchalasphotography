@@ -111,9 +111,28 @@ shimmerStyle.textContent = `
 `;
 document.head.appendChild(shimmerStyle);
 
+// Animación de entrada para imágenes de galería
+function animateGalleryImages() {
+    const galleryImages = document.querySelectorAll('.image-container.project-image');
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+        galleryImages.forEach(img => observer.observe(img));
+    } else {
+        galleryImages.forEach(img => img.classList.add('visible'));
+    }
+}
+
 // Inicializar cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', () => {
     new ImageLoader();
+    animateGalleryImages();
 });
 
 // Inicializar también cuando se cargue la ventana (para casos de carga rápida)
@@ -121,4 +140,5 @@ window.addEventListener('load', () => {
     if (!document.querySelector('.image-container.loaded')) {
         new ImageLoader();
     }
+    animateGalleryImages();
 }); 
