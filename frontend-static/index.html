@@ -4,31 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Usielchalasphotography - Portafolio Fotográfico</title>
+    <meta name="description" content="Portafolio profesional de Usiel Chalas, fotógrafo en Baní, República Dominicana. Sesiones de gala, graduación, quince años, retratos y más. ¡Conoce mi trabajo y agenda tu sesión!">
+    <meta name="keywords" content="fotografía, fotógrafo, Baní, gala, graduación, quince años, retratos, portafolio, Usiel Chalas, sesión de fotos, arte, eventos, República Dominicana">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/image-loader.css">
 </head>
-<body>
+<body role="main">
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom fixed-top py-2">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom fixed-top py-2" role="navigation" aria-label="Navegación principal">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
                 <div class="image-container navbar-logo">
                     <div class="image-skeleton rounded-circle"></div>
-                    <img src="./images/logousielPhoto.jpg" alt="Logo Usielchalasphotography" loading="lazy">
+                    <img src="./images/logousielPhoto.jpg" alt="Logo Usielchalasphotography, cámara estilizada en círculo azul" loading="lazy">
                 </div>
                 <span class="fw-bold fs-5">Usielchalasphotography</span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir menú de navegación">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto gap-3">
                     <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
                     <li class="nav-item dropdown proyectos-hover">
-                        <a class="nav-link fw-semibold" href="#" id="proyectosDropdown" role="button" aria-expanded="false" style="padding-top: 0.6rem; padding-bottom: 0.6rem;">
+                        <a class="nav-link fw-semibold" href="#" id="proyectosDropdown" role="button" aria-haspopup="true" aria-expanded="false" aria-label="Ver proyectos fotográficos" style="padding-top: 0.6rem; padding-bottom: 0.6rem;">
                             Proyectos
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end shadow-lg proyectos-dropdown-menu" aria-labelledby="proyectosDropdown">
@@ -50,9 +52,9 @@
         <div class="hero-bg-image position-absolute top-0 start-0 w-100 h-100"></div>
         <div class="hero-bg-overlay"></div>
         <div class="container py-5 position-relative" style="z-index:1;">
-            <h1 class="display-4 fw-bold mb-4">Bienvenido</h1>
+            <h1 class="display-4 fw-bold mb-4" style="color:#fff;">Bienvenido</h1>
             <p class="lead mb-4">Me gusta que una imagen logre decir mucho más que mil palabras, y que a través de los ojos de las personas, podamos conocer su mundo.</p>
-            <a href="#proyectos" class="btn btn-dark px-5 py-2">Ver Portafolio</a>
+            <a href="#proyectos" class="btn btn-dark px-5 py-2" style="min-height:44px; min-width:120px; font-size:1.1rem;">Ver Portafolio</a>
         </div>
     </section>
 
@@ -63,17 +65,17 @@
             <div class="gallery-grid">
                 <div class="image-container project-image" data-project="Gala">
                     <div class="image-skeleton"></div>
-                    <img src="./images/Gala1.jpg" alt="Gala" loading="lazy">
+                    <img src="./images/Gala1.jpg" alt="Fotografía de Gala, retrato elegante en evento formal" loading="lazy">
                     <div class="project-overlay"><span>Gala</span></div>
                 </div>
                 <div class="image-container project-image" data-project="Graduación">
                     <div class="image-skeleton"></div>
-                    <img src="./images/Graduacion1.jpg" alt="Graduación" loading="lazy">
+                    <img src="./images/Graduacion1.jpg" alt="Fotografía de Graduación, celebración de logro académico" loading="lazy">
                     <div class="project-overlay"><span>Graduación</span></div>
                 </div>
                 <div class="image-container project-image" data-project="Quince años">
                     <div class="image-skeleton"></div>
-                    <img src="./images/quince1.jpg" alt="Quince años" loading="lazy">
+                    <img src="./images/quince1.jpg" alt="Fotografía de Quince años, retrato artístico de celebración" loading="lazy">
                     <div class="project-overlay"><span>Quince años</span></div>
                 </div>
             </div>
@@ -88,7 +90,7 @@
                 <div class="col-md-4 text-center mb-4 mb-md-0">
                     <div class="image-container profile-image rounded-circle shadow">
                         <div class="image-skeleton rounded-circle"></div>
-                        <img src="./images/usiel1.jpg" alt="Usiel Chalas" loading="lazy">
+                        <img src="./images/usiel1.jpg" alt="Retrato de Usiel Chalas, fotógrafo profesional" loading="lazy">
                     </div>
                 </div>
                 <div class="col-md-7">
@@ -99,12 +101,12 @@
                         Mi objetivo es que cada foto hable por sí sola y que cada cliente se lleve un recuerdo inolvidable. ¡Bienvenido a mi mundo visual!
                     </p>
                     <!-- Habilidades -->
-                    <div class="d-flex gap-4 align-items-center mb-3 flex-wrap">
-                        <span title="Edición profesional"><i class="bi bi-brush" style="font-size:2rem;"></i></span>
-                        <span title="Cámara profesional"><i class="bi bi-camera" style="font-size:2rem;"></i></span>
-                        <span title="Creatividad"><i class="bi bi-lightbulb" style="font-size:2rem;"></i></span>
-                        <span title="Trabajo en equipo"><i class="bi bi-people" style="font-size:2rem;"></i></span>
-                        <span title="Comunicación"><i class="bi bi-chat-dots" style="font-size:2rem;"></i></span>
+                    <div class="d-flex gap-4 align-items-center mb-3 flex-wrap" aria-label="Habilidades principales">
+                        <span title="Edición profesional"><i class="bi bi-brush" style="font-size:2rem;" aria-hidden="true"></i></span>
+                        <span title="Cámara profesional"><i class="bi bi-camera" style="font-size:2rem;" aria-hidden="true"></i></span>
+                        <span title="Creatividad"><i class="bi bi-lightbulb" style="font-size:2rem;" aria-hidden="true"></i></span>
+                        <span title="Trabajo en equipo"><i class="bi bi-people" style="font-size:2rem;" aria-hidden="true"></i></span>
+                        <span title="Comunicación"><i class="bi bi-chat-dots" style="font-size:2rem;" aria-hidden="true"></i></span>
                     </div>
                 </div>
             </div>
@@ -117,30 +119,30 @@
             <h2 class="text-center fw-bold mb-5">Conecta conmigo</h2>
             <div class="row justify-content-center g-4 mb-4">
                 <div class="col-6 col-md-3">
-                    <a href="https://facebook.com/profile.php?id=61573861809152" target="_blank" class="d-flex flex-column align-items-center text-dark text-decoration-none">
-                        <i class="bi bi-facebook" style="font-size:2.5rem;"></i>
+                    <a href="https://facebook.com/profile.php?id=61573861809152" target="_blank" rel="noopener" class="d-flex flex-column align-items-center text-dark text-decoration-none" aria-label="Ir a Facebook">
+                        <i class="bi bi-facebook" style="font-size:2.5rem;" aria-hidden="true"></i>
                         <span class="mt-2">Facebook</span>
                     </a>
                 </div>
                 <div class="col-6 col-md-3">
-                    <a href="https://instagram.com/usielchalasphotography?utm_source=ig_web_button_share_sheet&igsh=MW4wOXRnanlpZm0ybQ==" target="_blank" class="d-flex flex-column align-items-center text-dark text-decoration-none">
-                        <i class="bi bi-instagram" style="font-size:2.5rem;"></i>
+                    <a href="https://instagram.com/usielchalasphotography?utm_source=ig_web_button_share_sheet&igsh=MW4wOXRnanlpZm0ybQ==" target="_blank" rel="noopener" class="d-flex flex-column align-items-center text-dark text-decoration-none" aria-label="Ir a Instagram">
+                        <i class="bi bi-instagram" style="font-size:2.5rem;" aria-hidden="true"></i>
                         <span class="mt-2">Instagram</span>
                     </a>
                 </div>
                 <div class="col-6 col-md-3">
-                    <a href="https://wa.me/18097910961" target="_blank" class="d-flex flex-column align-items-center text-dark text-decoration-none">
-                        <i class="bi bi-whatsapp" style="font-size:2.5rem;"></i>
+                    <a href="https://wa.me/18097910961" target="_blank" rel="noopener" class="d-flex flex-column align-items-center text-dark text-decoration-none" aria-label="Ir a WhatsApp">
+                        <i class="bi bi-whatsapp" style="font-size:2.5rem;" aria-hidden="true"></i>
                         <span class="mt-2">WhatsApp</span>
                     </a>
                 </div>
             </div>
             <div class="text-center">
-                <a href="mailto:usielchalasphoto@email.com" class="btn btn-outline-dark px-4">Contáctame por correo</a>
+                <a href="mailto:usielchalasphoto@email.com" class="btn btn-outline-dark px-4" style="min-height:44px; min-width:120px; font-size:1.1rem;">Contáctame por correo</a>
             </div>
             <div class="text-center mt-3">
-                <a href="https://www.google.com/maps/search/?api=1&query=C.+Proyecto+6,+Baní+94000" target="_blank" class="direccion-link text-decoration-none">
-                    <i class="bi bi-geo-alt-fill text-primary me-2"></i>
+                <a href="https://www.google.com/maps/search/?api=1&query=C.+Proyecto+6,+Baní+94000" target="_blank" rel="noopener" class="direccion-link text-decoration-none" aria-label="Ver ubicación en Google Maps">
+                    <i class="bi bi-geo-alt-fill text-primary me-2" aria-hidden="true"></i>
                     <span class="fw-semibold">C. Proyecto 6, Baní 94000</span>
                 </a>
             </div>
@@ -148,11 +150,11 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer py-4 bg-white border-top">
+    <footer class="footer py-4 bg-white border-top" role="contentinfo">
         <div class="container text-center">
             <div class="image-container footer-logo mb-2">
                 <div class="image-skeleton rounded-circle"></div>
-                <img src="./images/logousielPhoto.jpg" alt="Logo Usielchalasphotography" loading="lazy">
+                <img src="./images/logousielPhoto.jpg" alt="Logo Usielchalasphotography, cámara estilizada en círculo azul" loading="lazy">
             </div>
             <div class="small text-muted">
             </div>

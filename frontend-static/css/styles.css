@@ -948,3 +948,80 @@ section#contacto .direccion-link:hover {
     padding-bottom: 2rem !important;
   }
 }
+
+/* === ACCESIBILIDAD Y RESPONSIVE MEJORADOS === */
+:root {
+  --color-principal: #232526;
+  --color-secundario: #007bff;
+  --color-fondo: #fff;
+  --color-contraste: #ffd700;
+  --color-bg-suave: #f8f9fa;
+}
+body {
+  color: var(--color-principal);
+  background: var(--color-fondo);
+}
+
+.btn, .btn-dark, .btn-outline-dark {
+  min-height: 44px;
+  min-width: 120px;
+  font-size: 1.1rem;
+  border-radius: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  transition: outline 0.18s, box-shadow 0.18s;
+}
+.btn:focus, .btn-dark:focus, .btn-outline-dark:focus {
+  outline: 2px solid var(--color-secundario);
+  box-shadow: 0 0 0 2px rgba(0,123,255,0.15);
+}
+
+.section-title, h1, h2, h3, h4, h5, h6 {
+  color: var(--color-principal);
+  font-family: 'Poppins', sans-serif;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+  .section-title, h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.4rem;
+  }
+  .btn, .btn-dark, .btn-outline-dark {
+    font-size: 1rem;
+    min-width: 100px;
+    padding: 0.7rem 1.2rem;
+  }
+  .navbar-nav .nav-link {
+    font-size: 1rem;
+    padding: 0.7rem 1rem;
+  }
+  .gallery-grid {
+    gap: 1.2rem;
+  }
+  .py-5 {
+    padding-top: 2.2rem !important;
+    padding-bottom: 2.2rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 15px;
+  }
+  .btn, .btn-dark, .btn-outline-dark {
+    font-size: 0.98rem;
+    min-width: 90px;
+    padding: 0.6rem 0.8rem;
+  }
+  .navbar-nav .nav-link {
+    font-size: 0.98rem;
+    padding: 0.6rem 0.7rem;
+  }
+}
