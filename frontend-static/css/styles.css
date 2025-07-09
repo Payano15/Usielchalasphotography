@@ -12,6 +12,9 @@ body {
     overflow-x: hidden;
 }
 
+/* ===== SISTEMA DE CARGA DE IMÁGENES ELEGANTE ===== */
+/* Los estilos del sistema de carga de imágenes se han movido a image-loader.css */
+
 /* ===== NAVBAR MEJORADO ===== */
 .navbar {
     background: linear-gradient(90deg, #232526 0%, #414345 100%) !important;

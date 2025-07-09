@@ -8,13 +8,17 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/image-loader.css">
 </head>
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom fixed-top py-2">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
-                <img src="./images/logousielPhoto.jpg" alt="Logo Usielchalasphotography" class="navbar-logo" style="width:40px;height:40px;object-fit:cover;border-radius:50%;">
+                <div class="image-container navbar-logo">
+                    <div class="image-skeleton rounded-circle"></div>
+                    <img src="./images/logousielPhoto.jpg" alt="Logo Usielchalasphotography" loading="lazy">
+                </div>
                 <span class="fw-bold fs-5">Usielchalasphotography</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -29,9 +33,8 @@
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end shadow-lg proyectos-dropdown-menu" aria-labelledby="proyectosDropdown">
                             <li><a class="dropdown-item py-3 px-4" href="gala.html">Gala</a></li>
-                            <li><a class="dropdown-item proyecto-item py-3 px-4" href="index.html#proyectos" data-proyecto="Graduación">Graduación</a></li>
-                            <li><a class="dropdown-item proyecto-item py-3 px-4" href="index.html#proyectos" data-proyecto="Quince años">Quince años</a></li>
-                            <li><a class="dropdown-item proyecto-item py-3 px-4" href="index.html#proyectos" data-proyecto="Bodas">Bodas</a></li>
+                            <li><a class="dropdown-item py-3 px-4" href="graduacion.html">Graduación</a></li>
+                            <li><a class="dropdown-item py-3 px-4" href="quince.html">Quince años</a></li>
                         </ul>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="index.html#sobre-mi">Sobre mí</a></li>
@@ -42,20 +45,15 @@
     </nav>
     <div style="height:70px;"></div>
     <!-- Galería Gala -->
-    <section class="py-5 bg-light">
+    <section class="py-5 bg-transparent">
         <div class="container">
-            <h2 class="text-center fw-bold mb-5">Galería Gala</h2>
-            <div class="row g-4 justify-content-center">
-                <div class="col-md-4 col-sm-6">
-                    <div class="card border-0 shadow-sm h-100">
-                        <img src="./images/Gala1.jpg" class="card-img-top" alt="Gala 1">
-                        <div class="card-body">
-                            <h5 class="card-title fw-bold">Gala</h5>
-                            <p class="card-text small text-muted">Un toque de elegancia y sutileza es todo lo que se necesita para hacer que tus retratos hablen por sí solos.</p>
-                        </div>
-                    </div>
+            <h2 class="text-center fw-bold mb-3">Galería Gala</h2>
+            <p class="text-center mb-5">Un toque de elegancia y sutileza es todo lo que se necesita para hacer que tus retratos hablen por sí solos.</p>
+            <div class="gallery-grid">
+                <div class="image-container project-image">
+                    <div class="image-skeleton"></div>
+                    <img src="./images/Gala1.jpg" alt="Gala 1" loading="lazy">
                 </div>
-                <!-- Puedes duplicar este bloque para más imágenes de Gala -->
             </div>
         </div>
     </section>
@@ -97,11 +95,14 @@
     <!-- Footer -->
     <footer class="footer py-4 bg-white border-top">
         <div class="container text-center">
-            <img src="./images/logousielPhoto.jpg" alt="Logo Usielchalasphotography" class="footer-logo mb-2" style="width:40px;height:40px;object-fit:cover;border-radius:50%;">
+            <div class="image-container footer-logo mb-2">
+                <div class="image-skeleton rounded-circle"></div>
+                <img src="./images/logousielPhoto.jpg" alt="Logo Usielchalasphotography" loading="lazy">
+            </div>
             <div class="small text-muted">&copy; 2024 Usielchalasphotography. Todos los derechos reservados.</div>
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="public/js/main.js"></script>
+    <script src="js/image-loader.js"></script>
 </body>
 </html> 
